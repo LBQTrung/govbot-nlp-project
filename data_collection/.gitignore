@@ -1,16 +1,16 @@
-# Python
-__pycache__/
-*.pyc
+# # Python
+# __pycache__/
+# *.pyc
 
-# IDE
-.vscode/
-.idea/
+# # IDE
+# .vscode/
+# .idea/
 
-# Virtual Environment
-venv/
-env/
-ENV/
+# # Virtual Environment
+# venv/
+# env/
+# ENV/
 
-# System Files
-.DS_Store
-Thumbs.db 
+# # System Files
+# .DS_Store
+# Thumbs.db 
