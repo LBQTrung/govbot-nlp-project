@@ -1,0 +1,200 @@
+2025-04-28 09:51:49,690 - INFO - Bắt đầu crawl dữ liệu cho 23 agency
+2025-04-28 09:51:53,497 - INFO - Bộ Công thương - Kết nối MongoDB thành công
+2025-04-28 09:51:53,498 - INFO - Bộ Ngoại giao - Kết nối MongoDB thành công
+2025-04-28 09:51:53,506 - INFO - Bộ Quốc phòng - Kết nối MongoDB thành công
+2025-04-28 09:51:53,513 - INFO - Bộ Nội vụ - Kết nối MongoDB thành công
+2025-04-28 09:51:53,534 - INFO - Bộ Khoa học và Công nghệ - Kết nối MongoDB thành công
+2025-04-28 09:51:53,544 - INFO - Bộ Tài chính - Kết nối MongoDB thành công
+2025-04-28 09:51:53,545 - INFO - Bộ Giáo dục và Đào tạo - Kết nối MongoDB thành công
+2025-04-28 09:51:53,551 - INFO - Bộ Nông nghiệp và Môi trường - Kết nối MongoDB thành công
+2025-04-28 09:51:53,552 - INFO - Bộ Công an - Kết nối MongoDB thành công
+2025-04-28 09:51:53,558 - INFO - Bộ Dân tộc và Tôn giáo - Kết nối MongoDB thành công
+2025-04-28 09:52:15,225 - INFO - Bộ Quốc phòng - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:15,661 - INFO - Bộ Dân tộc và Tôn giáo - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:15,871 - INFO - Bộ Ngoại giao - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:16,754 - INFO - Bộ Công thương - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:17,308 - INFO - Bộ Công an - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:18,307 - INFO - Bộ Giáo dục và Đào tạo - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:18,439 - INFO - Bộ Khoa học và Công nghệ - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:18,529 - INFO - Bộ Nội vụ - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:18,568 - INFO - Bộ Nông nghiệp và Môi trường - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:18,859 - INFO - Bộ Tài chính - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:20,906 - INFO - Bộ Quốc phòng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:22,710 - INFO - Bộ Dân tộc và Tôn giáo - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:23,509 - INFO - Bộ Ngoại giao - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:25,022 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:26,022 - INFO - Bộ Công an - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:27,017 - INFO - Bộ Giáo dục và Đào tạo - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:27,159 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:28,159 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:28,160 - INFO - Bộ Nội vụ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:28,161 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:29,696 - INFO - Bộ Ngoại giao - Đã lưu 20 thủ tục vào MongoDB
+2025-04-28 09:52:29,738 - INFO - Bộ Ngoại giao - Hoàn thành thu thập dữ liệu- Tổng số trang: 2 - Tổng số bản ghi thu thập được: 70
+2025-04-28 09:52:29,793 - INFO - Bộ Quốc phòng - Đã lưu 42 thủ tục vào MongoDB
+2025-04-28 09:52:29,839 - INFO - Bộ Quốc phòng - Hoàn thành thu thập dữ liệu- Tổng số trang: 2 - Tổng số bản ghi thu thập được: 92
+2025-04-28 09:52:31,539 - INFO - Bộ Dân tộc và Tôn giáo - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:34,234 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:36,096 - INFO - Bộ Công an - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:36,840 - INFO - Bộ Dân tộc và Tôn giáo - Đã lưu 7 thủ tục vào MongoDB
+2025-04-28 09:52:37,194 - INFO - Bộ Dân tộc và Tôn giáo - Hoàn thành thu thập dữ liệu- Tổng số trang: 3 - Tổng số bản ghi thu thập được: 107
+2025-04-28 09:52:37,952 - INFO - Bộ Giáo dục và Đào tạo - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:38,178 - INFO - Bộ Tư pháp - Kết nối MongoDB thành công
+2025-04-28 09:52:38,238 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Kết nối MongoDB thành công
+2025-04-28 09:52:39,072 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:40,069 - INFO - Bộ Nội vụ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:41,123 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:42,124 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:44,249 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:45,476 - INFO - Bộ Xây dựng - Kết nối MongoDB thành công
+2025-04-28 09:52:46,705 - INFO - Bộ Công an - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:49,039 - INFO - Bộ Giáo dục và Đào tạo - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:51,818 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:52,816 - INFO - Bộ Nội vụ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:53,681 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:54,739 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:55,346 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:57,088 - INFO - Bộ Công an - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:52:58,182 - INFO - Bộ Tư pháp - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:58,428 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Bắt đầu thu thập dữ liệu
+2025-04-28 09:52:59,269 - INFO - Bộ Giáo dục và Đào tạo - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:02,482 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:03,667 - INFO - Bộ Nội vụ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:04,678 - INFO - Bộ Tư pháp - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:05,674 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:05,989 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:06,674 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:07,236 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:07,845 - INFO - Bộ Công an - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:08,785 - INFO - Bộ Xây dựng - Bắt đầu thu thập dữ liệu
+2025-04-28 09:53:09,139 - INFO - Bộ Giáo dục và Đào tạo - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:13,096 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:13,529 - INFO - Bộ Nội vụ - Đã lưu 45 thủ tục vào MongoDB
+2025-04-28 09:53:13,623 - INFO - Bộ Nội vụ - Hoàn thành thu thập dữ liệu- Tổng số trang: 5 - Tổng số bản ghi thu thập được: 245
+2025-04-28 09:53:15,202 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:16,203 - INFO - Bộ Tư pháp - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:17,125 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:17,967 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:18,083 - INFO - Bộ Giáo dục và Đào tạo - Đã lưu 32 thủ tục vào MongoDB
+2025-04-28 09:53:18,155 - INFO - Bộ Giáo dục và Đào tạo - Hoàn thành thu thập dữ liệu- Tổng số trang: 6 - Tổng số bản ghi thu thập được: 282
+2025-04-28 09:53:18,968 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:19,094 - INFO - Bộ Công an - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:19,966 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:22,166 - INFO - Bộ Y tế - Kết nối MongoDB thành công
+2025-04-28 09:53:22,804 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:26,515 - INFO - Bảo hiểm xã hội Việt Nam - Kết nối MongoDB thành công
+2025-04-28 09:53:27,361 - INFO - Bộ Tư pháp - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:28,362 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:28,615 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:29,391 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:30,518 - INFO - Bộ Công an - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:31,518 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:31,932 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:33,318 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:37,629 - INFO - Bộ Tư pháp - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:39,538 - INFO - Bộ Công an - Đã lưu 31 thủ tục vào MongoDB
+2025-04-28 09:53:39,635 - INFO - Bộ Công an - Hoàn thành thu thập dữ liệu- Tổng số trang: 8 - Tổng số bản ghi thu thập được: 381
+2025-04-28 09:53:39,638 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:40,537 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:41,054 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:43,153 - INFO - Bộ Y tế - Bắt đầu thu thập dữ liệu
+2025-04-28 09:53:43,441 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:44,104 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:44,472 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:47,846 - INFO - Ngân hàng Chính sách xã hội - Kết nối MongoDB thành công
+2025-04-28 09:53:48,543 - INFO - Bộ Tư pháp - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:49,540 - INFO - Bộ Y tế - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:50,741 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:51,740 - INFO - Bộ Công thương - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:53,876 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:55,627 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:56,646 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:56,646 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:53:57,871 - INFO - Bộ Tư pháp - Đã lưu 38 thủ tục vào MongoDB
+2025-04-28 09:53:57,958 - INFO - Bộ Tư pháp - Hoàn thành thu thập dữ liệu- Tổng số trang: 6 - Tổng số bản ghi thu thập được: 288
+2025-04-28 09:53:59,868 - INFO - Bảo hiểm xã hội Việt Nam - Bắt đầu thu thập dữ liệu
+2025-04-28 09:53:59,910 - INFO - Bảo hiểm xã hội Việt Nam - Hoàn thành thu thập dữ liệu- Tổng số trang: 1 - Tổng số bản ghi thu thập được: 0
+2025-04-28 09:54:00,108 - INFO - Bộ Công thương - Đã lưu 34 thủ tục vào MongoDB
+2025-04-28 09:54:00,172 - INFO - Bộ Công thương - Hoàn thành thu thập dữ liệu- Tổng số trang: 10 - Tổng số bản ghi thu thập được: 484
+2025-04-28 09:54:00,319 - INFO - Bộ Y tế - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:01,112 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:04,630 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:06,088 - INFO - Ngân hàng Nhà nước Việt Nam - Kết nối MongoDB thành công
+2025-04-28 09:54:06,436 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:06,974 - INFO - Ngân hàng Chính sách xã hội - Bắt đầu thu thập dữ liệu
+2025-04-28 09:54:07,657 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:08,246 - INFO - Ngân hàng phát triển Việt Nam - Kết nối MongoDB thành công
+2025-04-28 09:54:08,409 - INFO - Thanh tra Chính phủ - Kết nối MongoDB thành công
+2025-04-28 09:54:08,767 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:11,401 - INFO - Bộ Y tế - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:12,403 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:12,898 - INFO - Ngân hàng Chính sách xã hội - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:14,087 - INFO - Bộ Khoa học và Công nghệ - Đã lưu 13 thủ tục vào MongoDB
+2025-04-28 09:54:14,156 - INFO - Bộ Khoa học và Công nghệ - Hoàn thành thu thập dữ liệu- Tổng số trang: 11 - Tổng số bản ghi thu thập được: 513
+2025-04-28 09:54:15,718 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:17,075 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:18,414 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Đã lưu 9 thủ tục vào MongoDB
+2025-04-28 09:54:18,634 - INFO - Bộ Văn hóa, Thể thao và Du lịch - Hoàn thành thu thập dữ liệu- Tổng số trang: 8 - Tổng số bản ghi thu thập được: 359
+2025-04-28 09:54:20,721 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:22,266 - INFO - Tòa án nhân dân - Kết nối MongoDB thành công
+2025-04-28 09:54:22,614 - INFO - Bộ Y tế - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:23,030 - INFO - Ngân hàng Chính sách xã hội - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:25,377 - INFO - Ngân hàng Nhà nước Việt Nam - Bắt đầu thu thập dữ liệu
+2025-04-28 09:54:26,855 - INFO - Tập đoàn Điện lực Việt Nam - Kết nối MongoDB thành công
+2025-04-28 09:54:27,046 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:27,407 - INFO - Ngân hàng phát triển Việt Nam - Bắt đầu thu thập dữ liệu
+2025-04-28 09:54:27,506 - INFO - Thanh tra Chính phủ - Bắt đầu thu thập dữ liệu
+2025-04-28 09:54:27,696 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:29,777 - INFO - Ngân hàng Chính sách xã hội - Đã lưu 19 thủ tục vào MongoDB
+2025-04-28 09:54:29,840 - INFO - Ngân hàng Chính sách xã hội - Hoàn thành thu thập dữ liệu- Tổng số trang: 3 - Tổng số bản ghi thu thập được: 119
+2025-04-28 09:54:30,655 - INFO - Thanh tra Chính phủ - Đã lưu 24 thủ tục vào MongoDB
+2025-04-28 09:54:30,726 - INFO - Thanh tra Chính phủ - Hoàn thành thu thập dữ liệu- Tổng số trang: 1 - Tổng số bản ghi thu thập được: 24
+2025-04-28 09:54:31,668 - INFO - Ngân hàng Nhà nước Việt Nam - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:32,669 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:33,546 - INFO - Ngân hàng phát triển Việt Nam - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:33,896 - INFO - Bộ Y tế - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:38,151 - INFO - Văn phòng Chính phủ - Kết nối MongoDB thành công
+2025-04-28 09:54:39,011 - INFO - Văn phòng Trung ương Đảng - Kết nối MongoDB thành công
+2025-04-28 09:54:39,712 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:39,851 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:41,279 - INFO - Tòa án nhân dân - Bắt đầu thu thập dữ liệu
+2025-04-28 09:54:41,762 - INFO - Tòa án nhân dân - Đã lưu 3 thủ tục vào MongoDB
+2025-04-28 09:54:41,787 - INFO - Tòa án nhân dân - Hoàn thành thu thập dữ liệu- Tổng số trang: 1 - Tổng số bản ghi thu thập được: 3
+2025-04-28 09:54:43,066 - INFO - Ngân hàng Nhà nước Việt Nam - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:44,179 - INFO - Ngân hàng phát triển Việt Nam - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:45,178 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:45,185 - INFO - Bộ Y tế - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:45,765 - INFO - Tập đoàn Điện lực Việt Nam - Bắt đầu thu thập dữ liệu
+2025-04-28 09:54:46,919 - INFO - Tập đoàn Điện lực Việt Nam - Đã lưu 12 thủ tục vào MongoDB
+2025-04-28 09:54:46,960 - INFO - Tập đoàn Điện lực Việt Nam - Hoàn thành thu thập dữ liệu- Tổng số trang: 1 - Tổng số bản ghi thu thập được: 12
+2025-04-28 09:54:49,279 - INFO - Bộ Nông nghiệp và Môi trường - Đã lưu 34 thủ tục vào MongoDB
+2025-04-28 09:54:49,396 - INFO - Bộ Nông nghiệp và Môi trường - Hoàn thành thu thập dữ liệu- Tổng số trang: 13 - Tổng số bản ghi thu thập được: 634
+2025-04-28 09:54:50,045 - INFO - Ngân hàng phát triển Việt Nam - Đã lưu 12 thủ tục vào MongoDB
+2025-04-28 09:54:50,119 - INFO - Ngân hàng phát triển Việt Nam - Hoàn thành thu thập dữ liệu- Tổng số trang: 3 - Tổng số bản ghi thu thập được: 112
+2025-04-28 09:54:52,322 - INFO - Bộ Xây dựng - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:53,841 - INFO - Ngân hàng Nhà nước Việt Nam - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:55,372 - INFO - Bộ Y tế - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:56,237 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:54:57,805 - INFO - Văn phòng Trung ương Đảng - Bắt đầu thu thập dữ liệu
+2025-04-28 09:54:57,969 - INFO - Văn phòng Trung ương Đảng - Đã lưu 1 thủ tục vào MongoDB
+2025-04-28 09:54:57,988 - INFO - Văn phòng Trung ương Đảng - Hoàn thành thu thập dữ liệu- Tổng số trang: 1 - Tổng số bản ghi thu thập được: 1
+2025-04-28 09:55:02,452 - INFO - Ngân hàng Nhà nước Việt Nam - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:02,538 - INFO - Bộ Xây dựng - Đã lưu 45 thủ tục vào MongoDB
+2025-04-28 09:55:02,605 - INFO - Bộ Xây dựng - Hoàn thành thu thập dữ liệu- Tổng số trang: 10 - Tổng số bản ghi thu thập được: 495
+2025-04-28 09:55:04,690 - INFO - Bộ Y tế - Đã lưu 47 thủ tục vào MongoDB
+2025-04-28 09:55:04,735 - INFO - Bộ Y tế - Hoàn thành thu thập dữ liệu- Tổng số trang: 8 - Tổng số bản ghi thu thập được: 397
+2025-04-28 09:55:06,059 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:10,266 - INFO - Ngân hàng Nhà nước Việt Nam - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:11,061 - INFO - Văn phòng Chính phủ - Bắt đầu thu thập dữ liệu
+2025-04-28 09:55:11,105 - INFO - Văn phòng Chính phủ - Hoàn thành thu thập dữ liệu- Tổng số trang: 1 - Tổng số bản ghi thu thập được: 0
+2025-04-28 09:55:15,016 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:17,722 - INFO - Ngân hàng Nhà nước Việt Nam - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:23,073 - INFO - Ngân hàng Nhà nước Việt Nam - Đã lưu 15 thủ tục vào MongoDB
+2025-04-28 09:55:23,123 - INFO - Ngân hàng Nhà nước Việt Nam - Hoàn thành thu thập dữ liệu- Tổng số trang: 7 - Tổng số bản ghi thu thập được: 315
+2025-04-28 09:55:24,109 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:32,781 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:41,700 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:50,341 - INFO - Bộ Tài chính - Đã lưu 50 thủ tục vào MongoDB
+2025-04-28 09:55:58,594 - INFO - Bộ Tài chính - Đã lưu 43 thủ tục vào MongoDB
+2025-04-28 09:55:58,657 - INFO - Bộ Tài chính - Hoàn thành thu thập dữ liệu- Tổng số trang: 20 - Tổng số bản ghi thu thập được: 993
+2025-04-28 09:56:04,941 - INFO - Hoàn thành crawl dữ liệu cho tất cả các agency
