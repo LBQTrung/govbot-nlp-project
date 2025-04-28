@@ -7,26 +7,9 @@ from datetime import datetime
 import os
 
 class ProcedureScraper:
-    def __init__(self):
-        self.setup_logger()
+    def __init__(self, logger):
+        self.logger = logger
         
-    def setup_logger(self):
-        """Setup logging configuration"""
-        log_filename = f"logs/procedure_scraper_{datetime.now().strftime('%Y%m%d_%H%M%S')}.log"
-        
-        if not os.path.exists('logs'):
-            os.makedirs('logs')
-            
-        logging.basicConfig(
-            level=logging.INFO,
-            format='%(asctime)s - %(levelname)s - %(message)s',
-            handlers=[
-                logging.FileHandler(log_filename, encoding='utf-8'),
-                logging.StreamHandler()
-            ]
-        )
-        self.logger = logging.getLogger(__name__)
-
     def log_info(self, message: str):
         """Log information message"""
         self.logger.info(message)
@@ -149,32 +132,9 @@ class ProcedureScraper:
 
         return procedure_data
 
-    def scrape_and_save(self, url: str, output_file: str):
-        """Scrape a single procedure and save to file"""
-        try:
-            self.log_info(f"Scraping procedure: {url}")
-            procedure_data = self.scrape_procedure(url)
-            
-            if procedure_data:
-                # Create output directory if it doesn't exist
-                os.makedirs(os.path.dirname(output_file), exist_ok=True)
-                
-                # Save to file
-                with open(output_file, 'w', encoding='utf-8') as f:
-                    json.dump(procedure_data, f, ensure_ascii=False, indent=2)
-                
-                self.log_info(f"Successfully scraped and saved to {output_file}")
-                return True
-            else:
-                self.log_error("Failed to scrape procedure data")
-                return False
-                
-        except Exception as e:
-            self.log_error(f"Error in scrape_and_save: {str(e)}")
-            return False
 
 if __name__ == "__main__":
     scraper = ProcedureScraper()
     # Example usage:
     url = "https://dichvucong.gov.vn/p/home/dvc-tthc-thu-tuc-hanh-chinh-chi-tiet.html?ma_thu_tuc=376615"
-    scraper.scrape_and_save(url, 'data/procedure_data.json') 
+    print(scraper.scrape_procedure(url)) 

@@ -1,67 +1,184 @@
-# Agency Data Scraper
+# Government Procedures Data Collection System
 
-A project for collecting public service data from dichvucong.gov.vn for specific agencies.
+This project is designed to collect and store administrative procedures data from Vietnamese government websites. The system consists of multiple components that work together to scrape, process, and store data efficiently.
 
-## Directory Structure
+## Project Structure
 
 ```
 .
-├── agency_scraper.py    # Main script for data collection
-├── chrome_driver/       # Directory containing Chrome WebDriver
-├── data/               # Directory for collected data (JSON)
-└── logs/               # Directory for log files
+├── crawl_list.py           # Main script for collecting procedure lists
+├── crawl_detail.py         # Script for collecting detailed procedure information
+├── scraper/
+│   ├── agency_scraper.py   # Scraper for agency-specific procedures
+│   └── procedure_scraper.py # Scraper for detailed procedure information
+└── logs/                   # Directory for log files
 ```
 
-## Requirements
+## Components
 
-- Python 3.7+
-- Chrome WebDriver
-- Python libraries:
-  - selenium
-  - tqdm
+### 1. Agency List Collection (`crawl_list.py`)
+- Collects basic information about administrative procedures from multiple government agencies
+- Uses Selenium WebDriver for dynamic content scraping
+- Implements multi-threading for parallel processing
+- Features:
+  - Configurable number of worker threads
+  - Comprehensive logging system
+  - MongoDB integration for data storage
+  - Error handling and retry mechanisms
 
-## Installation
+### 2. Detailed Procedure Collection (`crawl_detail.py`)
+- Collects detailed information for each procedure
+- Processes procedures in parallel using ThreadPoolExecutor
+- Features:
+  - Status tracking (pending, processing, done, error)
+  - Automatic retry for failed procedures
+  - MongoDB integration for storing detailed data
+  - Comprehensive logging system
 
-1. Install required libraries:
-```bash
-pip install selenium tqdm
-```
+### 3. Scrapers
 
-2. Download the appropriate Chrome WebDriver for your Chrome version and place it in the `chrome_driver/` directory
+#### Agency Scraper (`agency_scraper.py`)
+- Handles scraping of procedure lists from specific agencies
+- Features:
+  - Headless Chrome browser automation
+  - Pagination handling
+  - Data validation and cleaning
+  - MongoDB integration
+  - Detailed logging
+  - Error handling and recovery
+
+#### Procedure Scraper (`procedure_scraper.py`)
+- Extracts detailed information from individual procedure pages
+- Features:
+  - BeautifulSoup for HTML parsing
+  - Structured data extraction
+  - Error handling and logging
+  - Support for various data formats (tables, text, etc.)
+
+## Setup Requirements
+
+1. Python Dependencies:
+   ```
+   selenium
+   beautifulsoup4
+   pymongo
+   python-dotenv
+   requests
+   tqdm
+   ```
+
+2. Environment Variables:
+   Create a `.env` file with:
+   ```
+   MONGODB_URI=your_mongodb_connection_string
+   ```
+
+3. Chrome WebDriver:
+   - Place ChromeDriver in `./chrome_driver/` directory
+   - Ensure ChromeDriver version matches your Chrome browser version
 
 ## Usage
 
-1. Create necessary directories:
-```bash
-mkdir data logs
+1. Collect Procedure Lists:
+   ```bash
+   python crawl_list.py
+   ```
+
+2. Collect Detailed Information:
+   ```bash
+   python crawl_detail.py
+   ```
+
+## Data Structure
+
+### Basic Procedure Information
+```json
+{
+    "ma_so": "procedure_code",
+    "ten": "procedure_name",
+    "co_quan_ban_hanh": "issuing_agency",
+    "co_quan_thuc_hien": "implementing_agency",
+    "linh_vuc": "field",
+    "url": "procedure_url",
+    "status": "pending|processing|done|error",
+    "agency": "agency_name",
+    "collected_at": "timestamp"
+}
 ```
 
-2. Run the script with the agency name to collect data:
-```python
-from agency_scraper import AgencyScraper
-
-# Initialize scraper with agency name
-scraper = AgencyScraper("Agency Name")
-
-# Start data collection
-scraper.scrape()
-
-# Save data to JSON file
-scraper.save_to_json()
+### Detailed Procedure Information
+```json
+{
+    "ma_so": "procedure_code",
+    "ten": "procedure_name",
+    "co_quan_ban_hanh": "issuing_agency",
+    "co_quan_thuc_hien": "implementing_agency",
+    "linh_vuc": "field",
+    "url": "procedure_url",
+    "status": "pending|processing|done|error",
+    "agency": "agency_name",
+    "collected_at": "timestamp",
+    "ma_thu_tuc": "procedure_code",
+    "so_quyet_dinh": "decision_number",
+    "ten_thu_tuc": "procedure_name",
+    "cap_thuc_hien": "implementation_level",
+    "loai_thu_tuc": "procedure_type",
+    "trinh_tu_thuc_hien": "implementation_steps",
+    "cach_thuc_thuc_hien": [
+        {
+            "Hình thức nộp": "submission_method",
+            "Thời hạn giải quyết": "processing_time",
+            "Phí, lệ phí": "fees",
+            "Mô tả": "description"
+        }
+    ],
+    "thanh_phan_ho_so": [
+        {
+            "Tên giấy tờ": "document_name",
+            "Mẫu đơn, tờ khai": "form_template",
+            "Số lượng": "quantity"
+        }
+    ],
+    "doi_tuong_thuc_hien": "implementation_subject",
+    "co_quan_co_tham_quyen": "authorized_agency",
+    "dia_chi_tiep_nhan_hs": "document_receiving_address",
+    "co_quan_duoc_uy_quyen": "authorized_organization",
+    "co_quan_phoi_hop": "coordinating_agency",
+    "ket_qua_thuc_hien": "implementation_result",
+    "can_cu_phap_ly": [
+        {
+            "Số ký hiệu": "reference_number",
+            "Trích yếu": "summary",
+            "Ngày ban hành": "issue_date",
+            "Cơ quan ban hành": "issuing_agency"
+        }
+    ],
+    "yeu_cau_dieu_kien": "requirements_conditions",
+    "tu_khoa": "keywords",
+    "mo_ta": "description",
+    "crawled_at": "timestamp",
+    "original_id": "mongodb_object_id"
+}
 ```
-
-## Collected Data
-
-For each public service, the following data is collected:
-- Service code
-- Service name
-- Issuing agency
-- Implementing agency
-- Field/domain
-- Detail URL
-
-Data is saved in JSON format in the `data/` directory with filename format: `[Agency_Name]_data.json`
 
 ## Logging
 
-The data collection process is logged in the `logs/` directory with filename format: `[Agency_Name]_[Timestamp].log` 
+The system maintains detailed logs in the `logs/` directory:
+- `crawl_list.log`: Logs for procedure list collection
+- `crawl_detail.log`: Logs for detailed procedure collection
+- Agency-specific logs with timestamps
+
+## Error Handling
+
+- Automatic retry mechanisms for failed requests
+- Status tracking for each procedure
+- Comprehensive error logging
+- Graceful failure handling with MongoDB connection management
+
+## Performance Considerations
+
+- Multi-threading for parallel processing
+- Configurable number of worker threads
+- Efficient MongoDB operations
+- Headless browser automation
+- Rate limiting and delays to prevent server overload 
