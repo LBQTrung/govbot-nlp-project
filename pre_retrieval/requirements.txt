@@ -1,0 +1,7 @@
+sentence-transformers
+pyvi
+pymongo
+chromadb
+python-dotenv
+rank-bm25
+tqdm
