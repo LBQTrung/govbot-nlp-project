@@ -1,6 +1,6 @@
 import random
 from pymongo import MongoClient
-from scraper.BoCongAn_procedure_scrapper import ProcedureScraper
+from scraper.BoCongAn_procedure_scrapper import BoCongAnProcedureScraper
 import time
 from datetime import datetime
 import logging
@@ -21,7 +21,7 @@ def setup_logger():
     logger.setLevel(logging.INFO)
     
     # Create handlers
-    file_handler = logging.FileHandler('logs/crawl_detail.log', encoding='utf-8')
+    file_handler = logging.FileHandler('logs/BoCongAn_crawl_detail.log', encoding='utf-8')
     console_handler = logging.StreamHandler()
     
     # Create formatters and add it to handlers
@@ -39,8 +39,8 @@ def setup_logger():
 client = MongoClient(os.getenv('MONGODB_URI'))
 client.admin.command('ping')
 db = client['govbot']
-procedures_collection = db['procedures']
-detailed_procedures_collection = db['detailed_procedures']
+procedures_collection = db['bocongan']
+detailed_procedures_collection = db['bocongan_detailed']
 print("Kết nối MongoDB thành công")
 
 def get_pending_procedures(limit=10):
@@ -73,7 +73,7 @@ def process_procedure(procedure, logger):
         update_procedure_status(procedure['_id'], 'processing')
         
         # Initialize scraper
-        scraper = ProcedureScraper(logger)
+        scraper = BoCongAnProcedureScraper(logger)
         
         # Get detailed information using the scrape_procedure method
         detailed_info = scraper.scrape_procedure(procedure['url'])
@@ -85,8 +85,6 @@ def process_procedure(procedure, logger):
         detailed_procedure = {
             **procedure,
             **detailed_info,
-            'crawled_at': datetime.now(),
-            'original_id': procedure['_id']
         }
         
         # Remove _id to avoid duplicate key error

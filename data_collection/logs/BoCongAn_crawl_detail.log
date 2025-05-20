@@ -1,0 +1,30 @@
+2025-05-20 14:40:58,714 - INFO - Processing 20 procedures
+2025-05-20 14:41:03,313 - INFO - Processing 20 procedures
+2025-05-20 14:41:07,521 - INFO - Processing 20 procedures
+2025-05-20 14:41:11,795 - INFO - Processing 20 procedures
+2025-05-20 14:41:16,155 - INFO - Processing 20 procedures
+2025-05-20 14:41:20,418 - INFO - Processing 20 procedures
+2025-05-20 14:41:22,098 - ERROR - Error fetching page https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26224: 502 Server Error: Bad Gateway for url: https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26224
+2025-05-20 14:41:24,569 - INFO - Processing 20 procedures
+2025-05-20 14:41:26,252 - ERROR - Error fetching page https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26284: 502 Server Error: Bad Gateway for url: https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26284
+2025-05-20 14:41:28,773 - INFO - Processing 20 procedures
+2025-05-20 14:41:33,066 - INFO - Processing 20 procedures
+2025-05-20 14:41:35,068 - ERROR - Error fetching page https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=56612: 502 Server Error: Bad Gateway for url: https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=56612
+2025-05-20 14:41:37,297 - INFO - Processing 20 procedures
+2025-05-20 14:41:41,537 - INFO - Processing 20 procedures
+2025-05-20 14:41:55,536 - INFO - Processing 20 procedures
+2025-05-20 14:41:57,347 - ERROR - Error fetching page https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26755: 502 Server Error: Bad Gateway for url: https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26755
+2025-05-20 14:42:19,896 - INFO - Processing 20 procedures
+2025-05-20 14:42:37,058 - INFO - Processing 20 procedures
+2025-05-20 14:42:44,782 - INFO - Processing 13 procedures
+2025-05-20 14:42:48,882 - INFO - All procedures have been processed. Exiting...
+2025-05-20 14:45:54,267 - INFO - Processing 20 procedures
+2025-05-20 14:45:58,678 - INFO - Processing 20 procedures
+2025-05-20 14:46:00,374 - ERROR - Error fetching page https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=48157: 502 Server Error: Bad Gateway for url: https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=48157
+2025-05-20 14:46:03,083 - INFO - All procedures have been processed. Exiting...
+2025-05-20 14:46:46,475 - INFO - Processing 8 procedures
+2025-05-20 14:46:47,728 - ERROR - Error fetching page https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26134: 502 Server Error: Bad Gateway for url: https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26134
+2025-05-20 14:46:47,749 - ERROR - Error fetching page https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26253: 502 Server Error: Bad Gateway for url: https://dichvucong.bocongan.gov.vn/bocongan/bothutuc/tthc?matt=26253
+2025-05-20 14:46:50,328 - INFO - All procedures have been processed. Exiting...
+2025-05-20 14:47:14,312 - INFO - Processing 2 procedures
+2025-05-20 14:47:17,484 - INFO - All procedures have been processed. Exiting...
