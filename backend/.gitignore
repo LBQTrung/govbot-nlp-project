@@ -41,6 +41,6 @@ htmlcov/
 # Static files
 static/uploads/
 
-app/backend/retriever_services/vietnamese_embedding/
+app/backend/retriever_services/vietnamese-embedding/
 
 
