@@ -1,0 +1,12 @@
+fastapi
+google-genai==1.13.0
+pydantic
+pymongo
+pillow
+pydantic_settings
+python-multipart
+uvicorn
+sentence-transformers
+pyvi
+rank-bm25
+chromadb
