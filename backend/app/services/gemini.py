@@ -172,7 +172,7 @@ Your responsibilities:
 - Maintain a friendly, natural tone that aligns with the previous conversation.
 - Do not use outside knowledge or make assumptions beyond the given procedures and message history.
 - If the required information is not available, respond with:
-    "Sorry, I currently do not have enough information to answer that question."
+    "Xin lỗi, hiện tại tôi không có đủ thông tin để trả lời câu hỏi đó."
 
 IMPORTANT: Always respond in the same language as the user's input    
 """
@@ -202,7 +202,7 @@ ASSISTANT:"""
             user_prompt,
         ],
         config={
-            "temperature": 0,
+            "temperature": 0.7,
             "system_instruction": SYSTEM_PROMPT
         }
     )

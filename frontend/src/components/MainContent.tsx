@@ -20,7 +20,6 @@ const MainContent = ({ selectedChat, onResendMessage }: MainContentProps) => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [message, setMessage] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const messagesEndRef = useRef<HTMLDivElement | null>(null);
   const [, setShowProductDetails] = useState(false);
 
   // Effect to handle selected chat
@@ -34,60 +33,73 @@ const MainContent = ({ selectedChat, onResendMessage }: MainContentProps) => {
     }
   }, [selectedChat]);
 
-  // Effect to scroll to bottom when new messages arrive
-  useEffect(() => {
-    if (messages.length > 0) {
-      messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
-    }
-  }, [messages]);
-
   const handleSend = async () => {
-    if (message.trim() !== '' && chatId) {
-      const userMsg: Message = {
-        id: (Date.now() + 1).toString(),
-        sender: 'user',
-        text: message.trim(),
-      };
-      setMessages(prev => [...prev, userMsg]);
-      setMessage('');
-      setIsLoading(true);
+    if (message.trim() === '') return;
+
+    const userMsg: Message = {
+      sender: 'user',
+      text: message.trim(),
+    };
+    setMessages(prev => [...prev, userMsg]);
+    setMessage('');
+    setIsLoading(true);
+    
+    try {
+      let currentChatId = chatId;
       
-      try {
-        // Call chat API to send message
-        const response = await fetch('http://localhost:8000/api/messages/send', {
+      // If no chat is selected, create a new one
+      if (!currentChatId) {
+        const createChatResponse = await fetch('http://localhost:8000/api/chat', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json'
           },
           body: JSON.stringify({
-            chat_id: chatId,
-            content: userMsg.text
+            name: userMsg.text.slice(0, 30) + (userMsg.text.length > 30 ? '...' : '')
           })
         });
 
-        const data = await response.json();
-        
-        if (data.status === 'success') {
-          const botMessage: Message = {
-            id: (Date.now() + 1).toString(),
-            text: data.data.content,
-            sender: 'bot'
-          };
-          setMessages(prev => [...prev, botMessage]);
+        const createChatData = await createChatResponse.json();
+        if (createChatData.status === 'success') {
+          currentChatId = createChatData.data._id;
+          setChatId(currentChatId);
         } else {
-          throw new Error('Failed to get response from chat API');
+          throw new Error('Failed to create new chat');
         }
-      } catch (error) {
-        console.error('Error getting response:', error);
-        const errorMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          text: 'Sorry, I encountered an error. Please try again.',
-          sender: 'bot'
-        };
-        setMessages(prev => [...prev, errorMessage]);
-      } finally {
-        setIsLoading(false);
       }
+
+      // Call chat API to send message
+      const response = await fetch('http://localhost:8000/api/messages/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          chat_id: currentChatId,
+          content: userMsg.text
+        })
+      });
+
+      const data = await response.json();
+      
+      if (data.status === 'success') {
+        const botMessage: Message = {
+          sender: 'bot',
+          text: data.data.content
+        };
+        setMessages(prev => [...prev, botMessage]);
+      } else {
+        throw new Error('Failed to get response from chat API');
+      }
+    } catch (error) {
+      console.error('Error getting response:', error);
+      const errorMessage: Message = {
+        sender: 'bot',
+        text: 'Sorry, I encountered an error. Please try again.'
+      };
+      setMessages(prev => [...prev, errorMessage]);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -112,7 +124,6 @@ const MainContent = ({ selectedChat, onResendMessage }: MainContentProps) => {
             chatId={chatId}
           />
         )}
-        <div ref={messagesEndRef} />
         {messages.length === 0 && (
           <div className="chat-header">
             <div className="chat-header-title">Chào, Trung.</div>

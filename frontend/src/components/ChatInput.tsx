@@ -1,6 +1,6 @@
 import './Chat.css';
-import InfoRoundedIcon from '@mui/icons-material/InfoRounded';
 import ArrowUpwardRoundedIcon from '@mui/icons-material/ArrowUpwardRounded';
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects';
 import { useEffect, useRef } from 'react';
 
 interface ChatInputProps {
@@ -36,7 +36,7 @@ const ChatInput = ({ message, setMessage, handleSend, handleKeyDown, setShowProd
         <textarea
           ref={textareaRef}
           className="chat-input-text"
-          placeholder="Ask anything"
+          placeholder="Hỏi gì đi bạn"
           value={message}
           onChange={e => setMessage(e.target.value)}
           onKeyDown={handleKeyDown}
@@ -55,7 +55,7 @@ const ChatInput = ({ message, setMessage, handleSend, handleKeyDown, setShowProd
             type="button"
             onClick={() => setShowProductDetails(true)}
           >
-            <InfoRoundedIcon /> Product details
+            <EmojiObjectsIcon /> Suy luận cực gắt
           </button>
           <button className="send-btn" type="button" onClick={handleSend}>
             <ArrowUpwardRoundedIcon />

@@ -5,7 +5,7 @@ import CheckRoundedIcon from '@mui/icons-material/CheckRounded';
 import ChatLoading from './ChatLoading';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useRef, useEffect } from 'react';
 
 export type Message = {
   sender: 'user' | 'bot';
@@ -15,14 +15,22 @@ export type Message = {
 
 interface ChatHistoryProps {
   messages: Message[];
-  messagesEndRef: React.RefObject<HTMLDivElement | null>;
   isLoading: boolean;
   onResendMessage?: (messageIndex: number, chatId: string, content: string) => Promise<void>;
+  chatId?: string | null;
 }
 
-const ChatHistory = ({ messages, messagesEndRef, isLoading, onResendMessage }: ChatHistoryProps) => {
+const ChatHistory = ({ messages, isLoading, onResendMessage, chatId }: ChatHistoryProps) => {
   const [copiedMessageIndex, setCopiedMessageIndex] = useState<number | null>(null);
   const [refreshingMessageIndex, setRefreshingMessageIndex] = useState<number | null>(null);
+  const chatHistoryRef = useRef<HTMLDivElement>(null);
+
+  // Scroll to bottom when messages change or loading state changes
+  useEffect(() => {
+    if (chatHistoryRef.current) {
+      chatHistoryRef.current.scrollTop = chatHistoryRef.current.scrollHeight;
+    }
+  }, [messages, isLoading]);
 
   const handleCopy = useCallback((messageIndex: number, text: string) => {
     navigator.clipboard.writeText(text);
@@ -141,7 +149,7 @@ const ChatHistory = ({ messages, messagesEndRef, isLoading, onResendMessage }: C
   };
 
   return (
-    <div className="chat-history">
+    <div className="chat-history" ref={chatHistoryRef}>
       {messages.map((message, index) => (
         <div key={index} className={`chat-message-row ${message.sender}`}>
           <div className={`chat-message ${message.sender}`}>
@@ -150,7 +158,6 @@ const ChatHistory = ({ messages, messagesEndRef, isLoading, onResendMessage }: C
         </div>
       ))}
       {isLoading && <ChatLoading />}
-      <div ref={messagesEndRef} />
     </div>
   );
 };

@@ -118,7 +118,7 @@ const Sidebar = ({ isOpen, onToggle, onNewChat, chatList, onSelectChat, onRename
               ml: 1
             }}
           >
-            Visor
+            ProBot
           </Typography>
         )}
       </Box>
