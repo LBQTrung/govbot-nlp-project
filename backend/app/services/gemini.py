@@ -4,9 +4,9 @@ from typing import List, Dict
 from pydantic import BaseModel
 
 
-class FilterAndExpandQueryResponse(BaseModel):
-    has_enough_context: bool
-    response: str
+class ExtractUserMessageResponse(BaseModel):
+    procedure_name: str | None
+    problem: str | None
 
 
 # Configure Gemini
@@ -33,31 +33,107 @@ def generate_chat_name(user_message: str, bot_response: str) -> str:
     )
     return response.text.strip()
 
-def filter_and_expand_query(message: str, history_messages: list) -> str:
+
+def extract_user_message(message: str, history_messages: list) -> str:
+    client = genai.Client(api_key=settings.GEMINI_API_KEY)
+
+    SYSTEM_PROMPT = f"""
+You are an assistant designed to extract structured information from a conversation related to public administrative procedures.
+
+Your Task:
+Given:
+- The **CURRENT USER QUESTION**.
+- The **PREVIOUS CONVERSATION**.
+
+Determine whether the user has provided:
+1. The **name of the public administrative procedure** (e.g., "đăng ký khai sinh", "gia hạn giấy phép kinh doanh").
+2. The **specific problem or question** they have about this procedure (e.g., "cần giấy tờ gì", "mất bao lâu").
+
+Focus on the **most recent parts of the conversation**, especially the latest messages, to ensure you are capturing the user's current intent, in case they have changed the topic or are asking about a different procedure than before.
+
+If both pieces of information are available, return the result in the following JSON format, with all **values in Vietnamese**:
+{{
+  "procedure_name": "tên thủ tục hành chính bằng tiếng Việt",
+  "problem": "vấn đề cụ thể mà người dùng hỏi, bằng tiếng Việt"
+}}
+
+If either procedure_name or problem is missing, return:
+{{
+  "procedure_name": None,
+  "problem": None
+}}
+"""
+    history_text = "\n".join([
+        f"{msg['sender']}: {msg['text']}"
+        for msg in history_messages  # Only use last 5 messages for context
+    ])
+
+    user_prompt = f"""
+PREVIOUS CONVERSATION:
+{history_text}
+
+CURRENT USER QUESTION: {message}
+
+ASSISTANT:"""
+    
+    response = client.models.generate_content(
+        model="gemini-1.5-flash",
+        contents=[
+            user_prompt,
+        ],
+        config={
+            "temperature": 0,
+            "system_instruction": SYSTEM_PROMPT,
+            "response_mime_type": "application/json",
+            "response_schema": ExtractUserMessageResponse
+        }
+    )
+    return response.parsed.__dict__
+
+
+
+def basic_question_generator(message: str, history_messages: list) -> str:
     client = genai.Client(api_key=settings.GEMINI_API_KEY)
     
     SYSTEM_PROMPT = f"""
-You are a language model designed to analyze user queries based on previous conversation history in order to ensure appropriate classification and response generation.
+You are an assistant that helps users inquire about public administrative procedures.
 
-Your tasks:
-- Evaluate whether the current query, combined with the previous conversation, forms a complete question with sufficient context about a public administrative procedure.
-- If it does form a complete administrative procedure question, rewrite the current query into a fully contextualized and self-contained question.
-- If it forms a complete question but is not related to public administrative procedures, respond to the user accordingly (as a general assistant).
-- If the current query and the previous conversation do not form a complete question about an administrative procedure, ask a clarifying question to the user to obtain the missing context.
+Your Task:
+Based on the following extracted JSON:
 {{
-  "has_enough_context": <true_or_false>,
-  "response": "<the completed query about the public administrative procedure, or an appropriate response for non-administrative topics, or a clarifying question if the context is insufficient>"
+  "procedure_name": "tên thủ tục hành chính bằng tiếng Việt",
+  "problem": "vấn đề cụ thể mà người dùng hỏi, bằng tiếng Việt"
 }}
 
-IMPORTANT: Always respond in the same language as the user's input
+If any of the fields (procedure_name, problem) are null or missing, generate a natural, polite question in Vietnamese to ask the user for the missing information. The goal is to collect the minimal necessary details so that we can answer their question correctly.
+Guidelines:
+- Ask for only the missing information.
+- If both fields are missing, ask a question that guides the user to provide both.
+- Your question must be clear, concise, and in Vietnamese.
+- Do not repeat information already provided.
+- Do not assume anything beyond what's given.
+
+Examples:
+
+If "procedure_name": null, "problem": "Tôi cần biết mất bao lâu"
+→ Ask: "Bạn đang hỏi về thủ tục hành chính nào vậy ạ?"
+
+If "procedure_name": "Đăng ký kết hôn", "problem": null
+→ Ask: "Bạn cần hỏi gì về thủ tục 'Đăng ký kết hôn' ạ?"
+
+If both are null
+→ Ask: "Bạn vui lòng cho biết bạn đang hỏi về thủ tục hành chính nào và bạn đang cần hỗ trợ vấn đề gì ạ?"
+
 """
     
 
     # Format chat history
     history_text = "\n".join([
         f"{msg['sender']}: {msg['text']}"
-        for msg in history_messages[-5:]  # Only use last 5 messages for context
+        for msg in history_messages  # Only use last 5 messages for context
     ])
+
+    print(history_text)
     
     user_prompt = f"""
 PREVIOUS CONVERSATION:
@@ -74,13 +150,11 @@ ASSISTANT:"""
             user_prompt,
         ],
         config={
-            "temperature": 0,
+            "temperature": 0.7,
             "system_instruction": SYSTEM_PROMPT,
-            "response_mime_type": "application/json",
-            "response_schema": FilterAndExpandQueryResponse
         }
     )
-    return response.parsed.__dict__
+    return response.text.strip()
 
 
 

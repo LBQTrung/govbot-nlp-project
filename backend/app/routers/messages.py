@@ -4,14 +4,15 @@ from bson import ObjectId
 from datetime import datetime, timezone
 
 from app.core.database import get_database
-from app.services.gemini import generate_response_for_procedures, filter_and_expand_query
+from app.services.gemini import generate_response_for_procedures, extract_user_message, basic_question_generator
+from app.retriever_services.retriever import retrieve_procedures
 from pydantic import BaseModel
 
 
 class SentMessage(BaseModel):
     chat_id: str
     content: str
-    procedures: list[dict]
+    # procedures: list[dict]
 
 
 class FilterAndExpandQueryRequest(BaseModel):
@@ -26,7 +27,7 @@ router = APIRouter()
 def send_message(message: SentMessage, db=Depends(get_database)):
     chat_id = message.chat_id
     content = message.content
-    procedures = message.procedures
+    # procedures = message.procedures
     
     if content == "":
         raise HTTPException(status_code=400, detail="Content is required")
@@ -38,7 +39,16 @@ def send_message(message: SentMessage, db=Depends(get_database)):
     
     history_messages = chat["messages"]
 
-    bot_response = generate_response_for_procedures(content, history_messages, procedures)
+
+    # Extract user message  
+    extracted_user_message = extract_user_message(content, history_messages)
+    print(extracted_user_message)
+
+    if extracted_user_message["procedure_name"] and extracted_user_message["problem"]:
+        procedures = retrieve_procedures(extracted_user_message["procedure_name"] + " " + extracted_user_message["problem"], db)
+        bot_response = generate_response_for_procedures(content, history_messages, procedures)
+    else:
+        bot_response = basic_question_generator(content, history_messages)
 
     # Add user message
     user_message = {
@@ -69,7 +79,6 @@ def send_message(message: SentMessage, db=Depends(get_database)):
 
 @router.post("/messages/filter-and-expand-query", response_model=dict)
 def filter_expand_query(message: FilterAndExpandQueryRequest, db=Depends(get_database)):
-    print(message)
     chat_id = message.chat_id
     content = message.content
 
@@ -79,8 +88,9 @@ def filter_expand_query(message: FilterAndExpandQueryRequest, db=Depends(get_dat
         raise HTTPException(status_code=404, detail="Chat not found")
     
     history_messages = chat["messages"]
+    print(history_messages)
 
-    response = filter_and_expand_query(content, history_messages)
+    response = extract_user_message(content, history_messages)
 
     return {
         "status": "success",
@@ -99,7 +109,7 @@ def resend_message(message: SentMessage, db=Depends(get_database)):
     if not chat:
         raise HTTPException(status_code=404, detail="Chat not found")
     
-    # Remove two last messages in chat history in chat history
+    # Remove two last messages in chat history
 
     # Get chat history
     history_messages = chat["messages"][:-2]

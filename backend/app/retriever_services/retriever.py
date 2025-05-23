@@ -64,7 +64,7 @@ def hybrid_search(query, alpha=0.5, top_k=10):
     return {documents_ids[ranked_indices[i]]: documents_names[ranked_indices[i]] for i in range(top_k)}
 
 
-def retrieve_procedures(query, db, top_k=10):
+def retrieve_procedures(query, db, top_k=20):
     # 1. Hybrid search
     hybrid_results = hybrid_search(query, top_k=top_k)
 
